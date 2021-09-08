@@ -275,6 +275,7 @@ func (g *GraphClient) performRequest(req *http.Request, v interface{}) error {
 	if req.Method == http.MethodDelete || req.Method == http.MethodPatch {
 		return nil
 	}
+
 	return json.Unmarshal(body, &v) // return the error of the json unmarshal
 }
 
@@ -442,4 +443,3 @@ func (g *GraphClient) UnmarshalJSON(data []byte) error {
 	}
 	return nil
 }
-
