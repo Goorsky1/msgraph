@@ -94,6 +94,9 @@ func (g *GraphClient) makeSureURLsAreSet() {
 		g.serviceRootEndpoint = ServiceRootEndpointGlobal
 	}
 }
+func (g *GraphClient) GetToken() Token {
+	return g.token
+}
 
 // refreshToken refreshes the current Token. Grabs a new one and saves it within the GraphClient instance
 func (g *GraphClient) refreshToken() error {
